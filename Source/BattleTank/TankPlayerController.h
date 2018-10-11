@@ -21,11 +21,15 @@ protected:
 public:
 	virtual void Tick(float DeltaTime) override;
 
-	ATank* GetControlledTank() const;
-
 private:
 	// Start the tank moving the barrel so that a shot would hit where
 	// the crosshair intersects the world
 	void AimTowardsCrosshair();
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+	ATank* GetControlledTank() const;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5f;
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.33333f;
 };
