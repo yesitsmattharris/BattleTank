@@ -31,7 +31,7 @@ public:
 	void AimAt(FVector HitLocation);
 	
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 100000.0f; // TODO find sensible default
+	float LaunchSpeed = 4000.0f;
 
 	UFUNCTION(BluePrintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
