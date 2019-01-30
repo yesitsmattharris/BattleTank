@@ -9,6 +9,7 @@
 class UTankBarrel;
 class UTankTurret;
 class UTankAimingComponent;
+class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -26,6 +27,8 @@ protected:
 
 	UTankAimingComponent* TankAimingComponent = nullptr;
 	UTankBarrel* Barrel = nullptr;
+	UPROPERTY(BluePrintReadOnly)
+	UTankMovementComponent* TankMovementComponent = nullptr;
 
 public:
 	UFUNCTION(BluePrintCallable, Category = Setup)
