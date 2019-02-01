@@ -22,40 +22,28 @@ public:
 	ATank();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 	UPROPERTY(BluePrintReadOnly)
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
-	UTankBarrel* Barrel = nullptr;
+	UTankBarrel* Barrel = nullptr; // TODO Remove
 
 	UPROPERTY(BluePrintReadOnly)
 	UTankMovementComponent* TankMovementComponent = nullptr;
 
 public:
-	UFUNCTION(BluePrintCallable, Category = Setup)
-	void SetBarrelReference(UTankBarrel* BarrelToSet);
-
-	UFUNCTION(BluePrintCallable, Category = Setup)
-	void SetTurretReference(UTankTurret* TurretToSet);
-
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BluePrintCallable)
 	void Fire();
 
 private:
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	UPROPERTY(EditDefaultsOnly, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
-	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000.0f;
 
-	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3.0f;
 
 	double LastFireTime = 0;

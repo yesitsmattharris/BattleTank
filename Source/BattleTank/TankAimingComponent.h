@@ -24,13 +24,10 @@ class BATTLETANK_API UTankAimingComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
-	UTankAimingComponent();
-
-public:	
 	void AimAt(FVector HitLocation, float LaunchSpeed);
-	void SetBarrelReference(UTankBarrel* BarrelToSet);
-	void SetTurretReference(UTankTurret* TurretToSet);
+
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	void Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet, EFiringState FiringStateToSet);
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -41,5 +38,8 @@ private:
 	UTankTurret* Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
+
+	// Sets default values for this component's properties
+	UTankAimingComponent();
 
 };
