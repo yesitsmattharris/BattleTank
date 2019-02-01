@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Matt Harris
+
 
 #include "TankPlayerController.h"
 #include "Engine/World.h"
