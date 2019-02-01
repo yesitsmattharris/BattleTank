@@ -47,4 +47,6 @@ private:
 	float ReloadTimeInSeconds = 3.0f;
 
 	double LastFireTime = 0;
+
+	virtual void BeginPlay() override;
 };
