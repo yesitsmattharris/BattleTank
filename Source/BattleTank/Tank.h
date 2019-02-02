@@ -8,7 +8,6 @@
 
 class UTankBarrel;
 class UTankTurret;
-class UTankAimingComponent;
 class AProjectile;
 
 UCLASS()
@@ -21,13 +20,10 @@ public:
 	ATank();
 
 protected:
-	UPROPERTY(BluePrintReadOnly)
-	UTankAimingComponent* TankAimingComponent = nullptr;
-
 	UTankBarrel* Barrel = nullptr; // TODO Remove
 
 public:
-	void AimAt(FVector HitLocation);
+	//void AimAt(FVector HitLocation);
 
 	UFUNCTION(BluePrintCallable)
 	void Fire();
@@ -35,9 +31,6 @@ public:
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-	float LaunchSpeed = 4000.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3.0f;
