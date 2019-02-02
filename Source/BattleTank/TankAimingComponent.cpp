@@ -1,7 +1,6 @@
 // Copyright Matt Harris
 
 #include "TankAimingComponent.h"
-#include "Tank.h"
 #include "Kismet/GameplayStatics.h"
 #include "TankBarrel.h"
 #include "TankTurret.h"
