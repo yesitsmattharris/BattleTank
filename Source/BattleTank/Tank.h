@@ -9,7 +9,6 @@
 class UTankBarrel;
 class UTankTurret;
 class UTankAimingComponent;
-class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -26,9 +25,6 @@ protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
 	UTankBarrel* Barrel = nullptr; // TODO Remove
-
-	UPROPERTY(BluePrintReadOnly)
-	UTankMovementComponent* TankMovementComponent = nullptr;
 
 public:
 	void AimAt(FVector HitLocation);

@@ -4,6 +4,7 @@
 #include "Engine/World.h"
 #include "GameFramework/PlayerController.h"
 #include "Tank.h"
+// Depends on movement component via pathfinding system
 
 void ATankAIController::Tick(float DeltaTime)
 {
