@@ -43,6 +43,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 void UTankAimingComponent::BeginPlay()
 {
+	Super::BeginPlay();
 	// First fire is delayed
 	LastFireTime = FPlatformTime::Seconds();
 }
