@@ -1,9 +1,9 @@
 // Copyright Matt Harris
 
+#include "Projectile.h"
 #include "BattleTank.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/DamageType.h"
-#include "Projectile.h"
 
 // Sets default values
 AProjectile::AProjectile()
