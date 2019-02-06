@@ -6,7 +6,6 @@
 #include "Components/SceneComponent.h"
 #include "SpawnPoint.generated.h"
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLETANK_API USpawnPoint : public USceneComponent
 {
@@ -24,9 +23,13 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	AActor* GetSpawnedActor() const { return SpawnedActor; }
+
 private:
 	// Config
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AActor> SpawnClass;
 	
+	UPROPERTY()
+		AActor* SpawnedActor;
 };

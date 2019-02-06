@@ -43,3 +43,8 @@ void ASprungWheel::SetupConstraints()
 	MassWheelConstraint->SetConstrainedComponents(BodyRoot, NAME_None, Axle, NAME_None);
 	AxleWheelConstraint->SetConstrainedComponents(Axle, NAME_None, Wheel, NAME_None);
 }
+
+void ASprungWheel::AddDrivingForce(float ForceMagnitude)
+{
+	Wheel->AddForce(Axle->GetForwardVector() * ForceMagnitude);
+}
